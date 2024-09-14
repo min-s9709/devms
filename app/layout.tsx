@@ -1,6 +1,9 @@
 import type { Metadata } from 'next'
 import './globals.css'
 import localFont from 'next/font/local'
+import Footer from '@/components/common/Footer'
+import Header from '@/components/common/Header'
+import ScrollProgressBar from '@/components/common/ScrollProgressBar'
 
 const pretendard = localFont({
   src: './fonts/PretendardVariable.woff2',
@@ -20,7 +23,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='ko'>
-      <body className={pretendard.className}>{children}</body>
+      <body className={pretendard.className}>
+        <div className='min-h-screen'>
+          <Header />
+          <ScrollProgressBar />
+          <main className='justify-center flex flex-1'>{children}</main>
+          <Footer />
+        </div>
+      </body>
     </html>
   )
 }
