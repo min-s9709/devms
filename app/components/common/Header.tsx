@@ -3,7 +3,7 @@
 import { Icon } from '@iconify/react'
 import Link from 'next/link'
 import MenutabList from '@/components/common/MenutabList'
-import useMenuTabs from '../hooks/useMenuTabs'
+import useMenuTabs from '@/hooks/useMenuTabs'
 
 export default function Header() {
   const { isMenuOpen, handleMenuClick, menuRef } = useMenuTabs()
