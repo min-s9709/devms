@@ -1,6 +1,9 @@
+'use client'
+
 import Image from 'next/image'
 import Tag from '@/components/common/Tag'
 import { Icon } from '@iconify/react'
+import { useRouter } from 'next/navigation'
 
 interface IPostProps {
   post: {
@@ -16,6 +19,7 @@ interface IPostProps {
 }
 
 export default function Post({ post }: IPostProps) {
+  const router = useRouter()
   return (
     <div className='relative group flex flex-col items-center w-full gap-5 rounded-md h-auto border-[1px] pb-2'>
       <Image
@@ -37,7 +41,12 @@ export default function Post({ post }: IPostProps) {
       </div>
       <div className='absolute rounded-lg flex flex-col items-center gap-3 justify-center w-full h-full opacity-0 group-hover:opacity-100 bg-[#323232]'>
         <h3 className='text-base text-white text-bold'>{post.data.title}</h3>
-        <button className='hover:bg-white hover:text-black w-2/3 border-[1px] text-bold border-white p-3 text-white border-solid rounded-lg'>
+        <button
+          onClick={() =>
+            router.push(`/blog/${post.data.category}/${post.data.slug}`)
+          }
+          className='hover:bg-white hover:text-black w-2/3 border-[1px] text-bold border-white p-3 text-white border-solid rounded-lg'
+        >
           상세보기
         </button>
       </div>
