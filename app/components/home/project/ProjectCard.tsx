@@ -34,7 +34,7 @@ export default function ProjectCard({ data }: IProjectCardProps) {
             <Tag key={index} size='small' name={item} />
           ))}
         </div>
-        <div className='absolute rounded-lg flex flex-col items-center gap-3 justify-center w-full h-full opacity-0 group-hover:opacity-100 bg-[#323232]'>
+        <div className='absolute transition ease-in-out duration-300 rounded-lg flex flex-col items-center gap-3 justify-center w-full h-full opacity-0 group-hover:opacity-90 bg-[#323232] '>
           <h3 className='text-base text-white text-bold'>{data.title}</h3>
           <button
             onClick={() => setIsOpen((prev) => !prev)}

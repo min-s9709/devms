@@ -4,18 +4,10 @@ import Image from 'next/image'
 import Tag from '@/components/common/Tag'
 import { Icon } from '@iconify/react'
 import { useRouter } from 'next/navigation'
+import { PostType } from '@/type'
 
 interface IPostProps {
-  post: {
-    data: {
-      title: string
-      category: string
-      date: string
-      headerImg: string
-      slug: string
-    }
-    content: string
-  }
+  post: PostType
 }
 
 export default function Post({ post }: IPostProps) {
@@ -39,7 +31,7 @@ export default function Post({ post }: IPostProps) {
           {post.data.date}
         </span>
       </div>
-      <div className='absolute rounded-lg flex flex-col items-center gap-3 justify-center w-full h-full opacity-0 group-hover:opacity-100 bg-[#323232]'>
+      <div className='absolute transition ease-in-out duration-300 rounded-lg flex flex-col items-center gap-3 justify-center w-full h-full opacity-0 group-hover:opacity-90 bg-[#323232]'>
         <h3 className='text-base text-white text-bold'>{post.data.title}</h3>
         <button
           onClick={() =>
