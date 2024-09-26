@@ -1,4 +1,4 @@
-import { Post } from '@/type'
+import { PostType } from '@/type'
 import fs from 'fs'
 import { sync } from 'glob'
 import matter from 'gray-matter'
@@ -11,7 +11,7 @@ export const getAllPostsPath = () => {
   return paths
 }
 
-export const parsePost = async (postPath: string): Promise<Post> => {
+export const parsePost = async (postPath: string): Promise<PostType> => {
   const file = fs.readFileSync(postPath, 'utf8')
   const { data, content } = matter(file)
   return {
@@ -78,4 +78,9 @@ export const getPreviousNext = async (postPath: string) => {
       slug: next?.data.slug,
     },
   }
+}
+
+export const getRecentPosts = async () => {
+  const allPosts = await getAllPosts()
+  return allPosts.slice(0, 3)
 }

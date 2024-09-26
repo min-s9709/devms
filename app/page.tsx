@@ -2,6 +2,7 @@ import Section from '@/components/home/section/Section'
 import ProfileCard from '@/components/home/profile/ProfileCard'
 import About from '@/components/home/about/About'
 import HomeProject from '@/components/home/project/HomeProject'
+import HomeRecentPosts from '@/components/home/posts/HomeRecentPosts'
 
 export default function Home() {
   return (
@@ -16,7 +17,7 @@ export default function Home() {
         <HomeProject />
       </Section>
       <Section>
-        <div></div>
+        <HomeRecentPosts />
       </Section>
     </div>
   )
