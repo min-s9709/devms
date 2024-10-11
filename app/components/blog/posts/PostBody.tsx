@@ -3,6 +3,7 @@ import remarkGfm from 'remark-gfm'
 import remarkBreaks from 'remark-breaks'
 import rehypePrettyCode from 'rehype-pretty-code'
 import rehypeSlug from 'rehype-slug'
+import rehypeAutolinkHeadings from 'rehype-autolink-headings'
 
 interface IContentProps {
   content: string
@@ -16,8 +17,17 @@ export default function PostBody({ content }: IContentProps) {
           mdxOptions: {
             remarkPlugins: [remarkGfm, remarkBreaks],
             rehypePlugins: [
-              [rehypePrettyCode, { theme: 'github-light' }],
               rehypeSlug,
+              [rehypePrettyCode, { theme: 'github-light' }],
+              [
+                rehypeAutolinkHeadings,
+                {
+                  properties: {
+                    className: ['anchor'],
+                    ariaLabel: 'anchor',
+                  },
+                },
+              ],
             ],
           },
         }}
