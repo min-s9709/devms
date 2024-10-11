@@ -84,3 +84,22 @@ export const getRecentPosts = async () => {
   const allPosts = await getAllPosts()
   return allPosts.slice(0, 3)
 }
+
+export const getToc = (content: string) => {
+  const regex = /(##+)\s(.+)/g
+  const headingList = content.match(regex)
+
+  return headingList?.map((heading) => ({
+    text: heading.replace('##', '').replace('#', ''),
+    link:
+      '#' +
+      heading
+        .replace('# ', '')
+        .replace('#', '')
+        .replace(/[\[\]:!@#$/%^&*()+=,.]/g, '')
+        .replace(/ /g, '-')
+        .toLowerCase()
+        .replace('?', ''),
+    indent: (heading.match(/#/g)?.length || 2) - 2,
+  }))
+}
