@@ -1,7 +1,17 @@
-export default function Section({ children }: { children: React.ReactNode }) {
+export default function Section({
+  children,
+  type = 'common',
+}: {
+  children: React.ReactNode
+  type?: 'common' | 'small'
+}) {
   return (
-    <div className='mt-24 max-w-[950px] min-h-screen flex flex-col pb-8'>
+    <section
+      className={`mt-24 ${
+        type === 'small' ? 'max-w-[700px]' : 'max-w-[950px]'
+      } min-h-screen flex flex-col pb-8`}
+    >
       {children}
-    </div>
+    </section>
   )
 }
