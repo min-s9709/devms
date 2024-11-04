@@ -31,11 +31,7 @@ export default function TableOfContent({ toc }: ITableOfContentProps) {
               )}
               key={index}
             >
-              <Link
-                href={item.link} // 기본 href 설정
-              >
-                {item.text}
-              </Link>
+              <Link href={item.link}>{item.text}</Link>
             </li>
           )
         })}
