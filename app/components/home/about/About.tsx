@@ -1,15 +1,24 @@
+'use client'
+
 import Title from '@/components/common/Title'
 import Tag from '@/components/common/Tag'
 import Navbutton from '@/components/common/NavButton'
 import { aboutData } from '@/data/introduce'
 import Introduce from '@/components/home/about/Introduce'
 import Image from 'next/image'
+import { motion } from 'framer-motion'
 
 export default function About() {
   return (
     <>
       <Title>About Me</Title>
-      <div className='grid grid-cols-2 max-lg:grid-cols-1'>
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: false }}
+        transition={{ ease: 'easeInOut', y: { duration: 0.5 }, duration: 1.3 }}
+        className='grid grid-cols-2 max-lg:grid-cols-1'
+      >
         <div className='flex flex-col items-center w-full gap-5'>
           <Image
             src='/images/homeprofile.png'
@@ -34,9 +43,20 @@ export default function About() {
             />
           ))}
         </div>
-      </div>
-      <div className='flex flex-col gap-6 mt-6'>
-        <h2 className='text-2xl font-bold'>Skill&Tool</h2>
+      </motion.div>
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: false }}
+        transition={{
+          ease: 'easeInOut',
+          y: { duration: 0.5 },
+          duration: 1.3,
+          delay: 0.2,
+        }}
+        className='flex flex-col gap-6 mt-6'
+      >
+        <h2 className='text-2xl font-bold'>🔧 Skill&Tool</h2>
         <div className='grid w-full grid-cols-2'>
           <div className='flex gap-3'>
             {aboutData.stacks.skills.map((item) => (
@@ -61,7 +81,7 @@ export default function About() {
             ))}
           </div>
         </div>
-      </div>
+      </motion.div>
     </>
   )
 }
