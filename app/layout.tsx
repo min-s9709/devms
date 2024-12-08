@@ -13,7 +13,7 @@ const pretendard = localFont({
 
 export const metadata: Metadata = {
   title: 'DEV-MS',
-  description: '프론트엔득 개발자 김민성의 개인 플랫폼입니다.',
+  description: '프론트엔드 개발자 김민성의 개인 플랫폼입니다.',
 }
 
 export default function RootLayout({
@@ -23,10 +23,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='ko' className='scroll-smooth'>
-      <body className={pretendard.className}>
+      <body className={`${pretendard.className} bg-[#FAFAFA]`}>
         <div className='min-h-screen'>
-          <Header />
           <ScrollProgressBar />
+          <Header />
           <main className='justify-center flex flex-1'>{children}</main>
           <Footer />
         </div>
