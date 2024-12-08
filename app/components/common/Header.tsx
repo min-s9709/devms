@@ -10,7 +10,7 @@ export default function Header() {
   return (
     <header
       className={
-        'fixed z-10 w-full h-16 bg-white flex items-center justify-center'
+        'fixed z-10 w-full h-16 bg-[#FAFAFA] flex items-center justify-center'
       }
     >
       <div className={'w-[1260px] flex'}>
