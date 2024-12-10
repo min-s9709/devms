@@ -8,6 +8,7 @@ import { getData } from '@/lib/notion'
 import Renderer from '@/components/notion/Renderer'
 import useModal from '@/hooks/useModal'
 import Modal from '@/components/common/Modal'
+import Loading from '@/components/common/Loading'
 
 interface IProjectCardProps {
   data: {
@@ -64,7 +65,7 @@ export default function ProjectCard({ data }: IProjectCardProps) {
       </div>
       {isOpen && (
         <Modal modalRef={modalRef} handleModalClose={handleModalClose}>
-          {projectData && <Renderer recordMap={projectData} />}
+          {projectData ? <Renderer recordMap={projectData} /> : <Loading />}
         </Modal>
       )}
     </>
