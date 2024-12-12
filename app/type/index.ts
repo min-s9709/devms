@@ -1,4 +1,4 @@
-export interface PostType {
+export type PostType = {
   data: {
     title: string
     category: string
@@ -7,4 +7,13 @@ export interface PostType {
     slug: string
   }
   content: string
+}
+
+export type ProjectDataType = {
+  id: string
+  tab: string
+  title: string
+  content: string
+  tag: string[]
+  img: string
 }

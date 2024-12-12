@@ -9,15 +9,10 @@ import Renderer from '@/components/notion/Renderer'
 import useModal from '@/hooks/useModal'
 import Modal from '@/components/common/Modal'
 import Loading from '@/components/common/Loading'
+import { ProjectDataType } from '@/type'
 
 interface IProjectCardProps {
-  data: {
-    id: string
-    title: string
-    content: string
-    tag: string[]
-    img: string
-  }
+  data: ProjectDataType
 }
 
 export default function ProjectCard({ data }: IProjectCardProps) {
