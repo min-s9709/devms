@@ -6,7 +6,7 @@ interface TitleProps {
 
 export default function Title({ children }: TitleProps) {
   return (
-    <h2 className='mb-8 text-4xl font-bold underline-offset-8'>
+    <h2 className='mb-4 text-4xl font-bold underline-offset-8'>
       📌 {children}
     </h2>
   )
