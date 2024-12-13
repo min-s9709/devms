@@ -5,6 +5,7 @@ import PostBody from '@/components/blog/posts/PostBody'
 import PostProfile from '@/components/blog/posts/PostProfile'
 import PostNavigator from '@/components/blog/posts/PostNavigator'
 import TableOfContent from '@/components/blog/posts/TableOfContent'
+import Giscus from '@/components/blog/posts/Giscus'
 
 interface IPostDetailPageProps {
   params: {
@@ -29,6 +30,7 @@ export default async function PostDetail({
       </article>
       <PostProfile />
       <PostNavigator previous={previous} next={next} category={category} />
+      <Giscus />
     </Section>
   )
 }
