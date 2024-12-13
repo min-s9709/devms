@@ -87,15 +87,16 @@ export default function Intro() {
                 Github
               </span>
             </a>
-            <Link
-              href='/resume'
+            <a
+              href='https://closed-owl-1e3.notion.site/f2587b1071d042128da6733320b6a9f3'
+              target='_blank'
               className='relative group rounded p-1 hover:bg-light-gray-color'
             >
               <ResumeIcon />
               <span className='absolute px-2 py-1 -left-2 bg-dark-gray-color rounded text-light-gray-color mt-2 opacity-0 group-hover:opacity-100 text-size-subbody'>
                 Resume
               </span>
-            </Link>
+            </a>
             <Link
               href='/blog'
               className='relative group rounded p-1 hover:bg-light-gray-color'

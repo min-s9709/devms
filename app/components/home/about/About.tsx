@@ -32,7 +32,10 @@ export default function About() {
               <Tag key={index} size='big' name={name} />
             ))}
           </div>
-          <Navbutton destination='/resume' content='이력서 보러가기' />
+          <Navbutton
+            destination='https://closed-owl-1e3.notion.site/f2587b1071d042128da6733320b6a9f3'
+            content='이력서 보러가기'
+          />
         </div>
         <div className='flex flex-col justify-center gap-2 max-lg:mt-8'>
           {aboutData.introduce.map((item, index) => (
